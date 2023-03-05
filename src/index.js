@@ -80,6 +80,14 @@ function createMarkupForCategories(
 }
 
 function onChooseCategory(event) {
+  toMarkCategoryBtn(event);
+  const nameOfCategory = event.target.outerText;
+  if (!(nameOfCategory === 'Others')) {
+    getCategoryArticles(nameOfCategory);
+  }
+}
+
+function toMarkCategoryBtn(event) {
   const categoryBtnArray = document.querySelectorAll(
     '.filter__main-category-btn'
   );
